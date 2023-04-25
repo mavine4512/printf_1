@@ -1,17 +1,17 @@
 #include "main.h"
+
 /**
- * handle_write_char - Prints a string
+ * handle_write_char - Function that prints a string
  * @c: char types.
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags.
  * @width: get width.
  * @precision: precision specifier
  * @size: Size specifier
- *
  * Return: Number of chars printed.
  */
-int handle_write_char(char c, char buffer[],
-	int flags, int width, int precision, int size)
+int handle_write_char(char c, char buffer[],int flags,
+		int width, int precision, int size)
 { /* char is stored at left and paddind at buffer's right */
 	int i = 0;
 	char padd = ' ';
@@ -54,8 +54,8 @@ int handle_write_char(char c, char buffer[],
  *
  * Return: Number of chars printed.
  */
-int write_number(int is_negative, int ind, char buffer[],
-	int flags, int width, int precision, int size)
+int write_number(int is_negative, int ind, char buffer[], int flags,
+		int width, int precision, int size)
 {
 	int length = BUFF_SIZE - ind - 1;
 	char padd = ' ', extra_ch = 0;
@@ -76,7 +76,7 @@ int write_number(int is_negative, int ind, char buffer[],
 }
 
 /**
- * write_num - Write a number using a bufffer
+ * write_num - Function that write a number using a bufffer
  * @ind: Index at which the number starts on the buffer
  * @buffer: Buffer
  * @flags: Flags
@@ -85,12 +85,11 @@ int write_number(int is_negative, int ind, char buffer[],
  * @length: Number length
  * @padd: Pading char
  * @extra_c: Extra char
- *
  * Return: Number of printed chars.
  */
-int write_num(int ind, char buffer[],
-	int flags, int width, int prec,
-	int length, char padd, char extra_c)
+int write_num(int ind, char buffer[],int flags,
+		int width, int prec, int length,
+		char padd, char extra_c)
 {
 	int i, padd_start = 1;
 
